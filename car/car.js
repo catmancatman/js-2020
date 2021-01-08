@@ -9,6 +9,8 @@ let dacia = {
         this.color = color;
     }
 }
+
+
 let ferrari = {
     make: "Dino",
     model: "1310",
