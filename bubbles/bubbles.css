@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(237, 213, 133);
+    height: 100vh;
+}
+@keyframes bubble {
+    to {
+        transform: translateY(-5vh) scale(2);
+    }
+}
+.bubble {
+    position: absolute;
+    height: 0.5em;
+    width: 0.5em;
+    border-color:tomato;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    transform: translateY(100vh);
+    animation-name: bubble;
+    animation-duration: 15s;
+    animation-delay: 5ms;
+    animation-timing-function: ;
+}
