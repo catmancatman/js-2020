@@ -1,0 +1,10 @@
+body {
+    font-size: 2em; 
+}
+#parallax, #parallax2 {
+    background-image: url("back.jpg");
+    background-size: cover;
+    height: 75vh;
+    background-attachment: fixed;
+    /* acesta este efectul de parallax background-attachment: fixed; */
+}
