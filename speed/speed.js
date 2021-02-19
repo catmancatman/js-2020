@@ -2,11 +2,24 @@ let startButton = document.querySelector("input[type='button']")
 
 startButton.addEventListener("click", startGame)
 
+// cand este apasata o tasta apelam fucia pressKey
+window.addEventListener("keydown", pressKey)
+
+function pressKey (event) {
+    let letter = event.key.toUpperCase()
+    // gasim primul div care are clasa titerei apasate
+    let div = document.querySelector("." + letter)
+    // facem div-ul sa dispara
+      //  let divs = document.querySelectorAll("." + letter) 
+      //  divs.forEach(div => div.remove()) pentru a disparea toate literele de accelasi fel la o apasare de tasta
+    div.remove()
+}
+
 function startGame() {
     // ascunde butonul
     startButton.classList.add("hidden")
     // intervalul este de o secunda (1000ms)
-    let interval = 1000
+    let interval = 3000
     //cream o noua litera la fieare secunda
     setInterval(createNewLetter, interval);
 }
