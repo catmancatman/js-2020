@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 body {
-    --black: rgb(38, 38, 38);
     background-color: var(--black);
-    color:rgb(231, 231, 231);
+    color:var(--font-color);
     font-family: sans-serif;
 }
 h1 {
@@ -16,6 +15,7 @@ h1 {
 nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 nav ul li {
     margin: 0 2em;
@@ -23,8 +23,13 @@ nav ul li {
     text-transform: uppercase;
     vertical-align: middle;
 }
-#switch {
+#switch::before {
+    content: var(--symbol);
     font-size: 1.5em;
+    position: relative;
+    top: -0.1em;
+    cursor: pointer;
+    font-family: "Font Awesome 5 Free";
 }
 div {
     height: 40vh;
