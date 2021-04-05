@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="todo-list">
+            <h1>
+                To do:
+            </h1>
+            <p>{{ "Total:" + todos.length}}</p>
+            <ul>
+                <li v-for="item in todos">
+                    {{ item }}
+                </li>
+            </ul>
+            <div class="new_task">
+                <label for="new_task">Task</label>
+                <input type="text" name="new_task" id="" v-model="new_task_entry">
+                <button class="save_task" @click="saveNewTodoItem">Save item</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    class Todo{
+        constructor(name){
+            this.name = name;
+            this.isDone = false;
+        }
+    }         
+
+        var app = new Vue ({
+            el: "#app",
+            data: {
+                new_task_entry: '',
+                todos: [
+                    new Todo("Wake up"),
+                    new Todo("Eat breakfast"),
+                    new Todo("Go to work")
+                ],
+                done_todos:[0, 1, 0]
+            },
+            methods: {
+                saveNewTodoItem (){
+                    this.todos.push(new Todo(this.new_task_entry))
+                    this.new_task_entry = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
