@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
     <script src="script.js" defer></script>
-
 </head>
-
 <body>
 
     <div id="products">
-        <p>Max Price: ({{ value }}) -{{ productsCount }}</p>
+        <p>Max Price: ({{ value }}) {{ productsCount }}</p>
         <div id="cart">
             <span>🛒</span>
             <p>{{ cartValue.length + ' Products' }}</p>
-            <p>{{ 'Total Price; ' +totalPriceCart }}$</p>
-        </div>
+            <p>{{ 'Total Price: ' +totalPriceCart}}$</p>
+        </div>  
         <label for="search">Search Products</label><br>
-        <input type="search" v-model="productsSearch" name="search" id="search" placeholder="serch..."><br>
+        <input type="search" v-model="productsSearch" name="search" id="search" placeholder="search..."><br>
         <input type="range" name="range" id="price" min="0" max="300" v-model="value">
-        
+
+        <product-list :products="filterProductsByName" v-on:add-to-cart-event="addToCart"></product-list>
+               
     </div>
-
+    
 </body>
-
 </html>
