@@ -34,6 +34,7 @@ class Game {
     }
 }
 
+
 class Dealer {
     game
     activeCards = []
